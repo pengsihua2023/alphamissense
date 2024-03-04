@@ -17,6 +17,7 @@ import numbers
 from typing import Optional, Sequence, Union
 
 import haiku as hk
+import jax
 import jax.numpy as jnp
 import numpy as np
 
@@ -63,7 +64,7 @@ class Linear(hk.Module):
                num_input_dims: int = 1,
                use_bias: bool = True,
                bias_init: float = 0.,
-               precision: Optional[bool] = None,
+               precision: Optional[jax.lax.Precision] = None,
                name: str = 'linear'):
     """Constructs Linear Module.
 
